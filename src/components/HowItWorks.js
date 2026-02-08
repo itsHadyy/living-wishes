@@ -1,25 +1,9 @@
 function HowItWorks() {
   const steps = [
-    {
-      num: 1,
-      title: 'Create a wish',
-      description: 'Write a message or record a video for someone you love.',
-    },
-    {
-      num: 2,
-      title: 'Choose the moment',
-      description: 'Select a date or life event (birthday, graduation, wedding, or beyond).',
-    },
-    {
-      num: 3,
-      title: 'Secure it',
-      description: 'Assign trusted contacts and privacy settings.',
-    },
-    {
-      num: 4,
-      title: 'Deliver it',
-      description: 'Your message is revealed at the right time.',
-    },
+    { num: 1, title: 'Create a wish', description: 'Write a message or record a video for someone you love.', accent: 'purple' },
+    { num: 2, title: 'Choose the moment', description: 'Select a date or life event (birthday, graduation, wedding, or beyond).', accent: 'pink' },
+    { num: 3, title: 'Secure it', description: 'Assign trusted contacts and privacy settings.', accent: 'blue' },
+    { num: 4, title: 'Deliver it', description: 'Your message is revealed at the right time.', accent: 'purple-2' },
   ];
 
   return (
@@ -33,7 +17,7 @@ function HowItWorks() {
         </p>
         <ol className="how__steps">
           {steps.map((step) => (
-            <li key={step.num} className="how__step">
+            <li key={step.num} className={`how__step how__step--${step.accent}`}>
               <div className="how__step-num" aria-hidden="true">{step.num}</div>
               <h3>{step.title}</h3>
               <p>{step.description}</p>

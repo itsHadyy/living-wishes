@@ -48,14 +48,14 @@ function HeroSection() {
         {!isComplete && <span className="hero__cursor" aria-hidden="true" />}
       </h1>
       <p className="hero__subheadline">
-        Living Wishes lets you create messages, videos, and memories for the people you love — delivered at the moments that matter most.
+        Create words, voices, and memories for the people you love — delivered when it matters most.
       </p>
       <div className="hero__ctas">
         <a href="#how-it-works" className="hero__btn hero__btn--primary">
           Create a Wish
         </a>
         <a href="#how-it-works" className="hero__btn hero__btn--secondary">
-          How it Works
+          How It Works
         </a>
       </div>
       <div className="hero__timeline" aria-hidden="true" />

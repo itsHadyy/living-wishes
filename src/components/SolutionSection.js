@@ -1,9 +1,9 @@
 function SolutionSection() {
   const features = [
-    { title: 'Write messages', description: 'Put your thoughts into words they can keep.' },
-    { title: 'Record voice and video', description: 'Your voice and face, saved for the right moment.' },
-    { title: 'Choose future moments', description: 'Birthdays, milestones, or a date you decide.' },
-    { title: 'Protect with privacy', description: 'Trusted contacts and control over who sees what.' },
+    { title: 'Write messages', description: 'Put your thoughts into words they can keep.', accent: 'purple' },
+    { title: 'Record voice and video', description: 'Your voice and face, saved for the right moment.', accent: 'pink' },
+    { title: 'Choose future moments', description: 'Birthdays, milestones, or a date you decide.', accent: 'blue' },
+    { title: 'Protect with privacy', description: 'Trusted contacts and control over who sees what.', accent: 'purple-2' },
   ];
 
   return (
@@ -17,7 +17,7 @@ function SolutionSection() {
         </p>
         <div className="solution__grid">
           {features.map((item) => (
-            <article key={item.title} className="solution__card">
+            <article key={item.title} className={`solution__card solution__card--${item.accent}`}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
             </article>

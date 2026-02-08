@@ -1,9 +1,9 @@
 function PrivacySection() {
   const points = [
     'End-to-end encryption',
-    'You control access',
-    'Trusted contacts system',
-    'Data protection',
+    'Controlled access',
+    'Trusted contacts',
+    'Secure storage',
   ];
 
   return (
