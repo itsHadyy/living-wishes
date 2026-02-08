@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 const HEADLINE = 'Messages that live beyond time.';
 const TYPE_SPEED = 120;
 const START_DELAY = 400;
 
 function HeroSection() {
+  const { user } = useAuth();
   const [visibleLength, setVisibleLength] = useState(0);
   const [started, setStarted] = useState(false);
 
@@ -51,9 +54,15 @@ function HeroSection() {
         Create words, voices, and memories for the people you love — delivered when it matters most.
       </p>
       <div className="hero__ctas">
-        <a href="#how-it-works" className="hero__btn hero__btn--primary">
-          Create a Wish
-        </a>
+        {user ? (
+          <Link to="/dashboard" className="hero__btn hero__btn--primary">
+            Create a Wish
+          </Link>
+        ) : (
+          <Link to="/signup" className="hero__btn hero__btn--primary">
+            Create a Wish
+          </Link>
+        )}
         <a href="#how-it-works" className="hero__btn hero__btn--secondary">
           How It Works
         </a>
