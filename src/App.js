@@ -1,23 +1,45 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import HeroSection from './components/HeroSection';
+import ProblemSection from './components/ProblemSection';
+import SolutionSection from './components/SolutionSection';
+import HowItWorks from './components/HowItWorks';
+import UseCases from './components/UseCases';
+import PrivacySection from './components/PrivacySection';
+import CTASection from './components/CTASection';
+import Footer from './components/Footer';
 
 function App() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.animate-in').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <SolutionSection />
+        <HowItWorks />
+        <UseCases />
+        <PrivacySection />
+        <CTASection />
+      </main>
+      <Footer />
     </div>
   );
 }
